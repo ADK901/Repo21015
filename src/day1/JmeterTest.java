@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -13,14 +15,22 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class JmeterTest {
+	public static WebDriver driver;
+	
+	public JmeterTest() {
+		
+	}
 
 
 	@Test
 	public void test() {
-		System.setProperty("webdriver.chrome.driver", "E:\\LTI\\Training\\SelJars\\Drivers\\chromedriver.exe");
-		WebDriver driver = new ChromeDriver();
+		//System.setProperty("webdriver.chrome.driver", "E:\\LTI\\Training\\SelJars\\Drivers\\New folder\\chromedriver.exe");
+		//WebDriver driver = new ChromeDriver();
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver();
 		driver.get("https://opensource-demo.orangehrmlive.com/");
-		driver.getTitle();
+		System.out.println("Title of the page:"+driver.getTitle());
+		driver.close();
 		
 	}
 
