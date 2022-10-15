@@ -16,6 +16,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class JmeterTest {
 	public static WebDriver driver;
+	int a=10;
 	
 	public JmeterTest() {
 		
